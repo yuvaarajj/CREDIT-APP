@@ -244,7 +244,7 @@ const Indi = ({ params }) => {
         <div>
           <div>
             <Button variant="contained" color="inherit">
-              Logout
+              Logoutt
             </Button>
           </div>
         </div>
