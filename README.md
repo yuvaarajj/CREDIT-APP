@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💳 CREDIT-APP — Full Stack Application
 
-## Getting Started
+A full-stack **Credit Management Application** built using **Next.js (Frontend)** and **Node.js + Express + MongoDB (Backend)**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🌐 Live Demo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔗 [Visit the App](https://credit-app-woad.vercel.app)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Tech Stack
 
-## Learn More
+### Frontend
+- Next.js (App Router)
+- Tailwind CSS
+- React
 
-To learn more about Next.js, take a look at the following resources:
+### Backend
+- Node.js
+- Express.js
+- MongoDB (via Mongoose)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🖼️ Frontend Overview
 
-## Deploy on Vercel
+The frontend is built with **Next.js (App Router)** and **Tailwind CSS**, providing a smooth, responsive UI for managing credit records. It communicates with the backend through REST APIs.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Key Features
+- User login & registration UI
+- Dashboard for credit records
+- Fully responsive design
+- API integration with backend
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🖥️ Backend Overview
+
+The backend is built using **Express.js** and uses **MongoDB** for data storage. It handles user registration/login and credit record CRUD operations.
+
+### Key Features
+- RESTful APIs for all operations
+- MongoDB integration via Mongoose
+- Basic auth functionality (register/login)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 📁 Frontend Setup
+
+1. Clone the frontend repo:
+
+   ```bash
+   git clone https://github.com/yuvaarajj/CREDIT-APP.git
+   cd CREDIT-APP
+
+
+🔌 API Endpoints
+Method	Endpoint	Description
+POST	  /register	Register a new user
+POST	  /login	  User login
+GET	    /credits	Get all credit entries
+POST	  /credits	Create a new credit entry
+
+
+📁 Project Structure
+Frontend (CREDIT-APP)
+arduino
+Copy
+Edit
+CREDIT-APP/
+├── public/
+├── src/
+│   └── app/
+│       ├── login/
+│       ├── register/
+│       └── dashboard/
+├── components/
+├── tailwind.config.mjs
+├── next.config.mjs
+└── ...
+
+Backend (CREDIT-APP-backend)
+bash
+Copy
+Edit
+CREDIT-APP-backend/
+├── models/
+│   └── Credit.js
+├── routes/
+│   └── credits.js
+├── db.js
+├── app.js
+├── .env
+└── ...
+
+
+👨‍💻 Author
+Yuva Raj Venkata
+📧 Email: ryuva125@gmail.com
+🔗 GitHub: @yuvaarajj
+
+
