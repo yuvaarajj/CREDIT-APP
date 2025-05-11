@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 const Header = () => {
@@ -33,7 +34,7 @@ const Header = () => {
           <img src="user.png" className="h-6" alt="" />
         </h2>
         <select name="panal" id="" className="text-xl font-bold text-green-700">
-          <option value="user">User</option>
+          <option value="user"> User</option>
           <option value="Verifier">Verifier</option>
           <option value="Admin">Admin</option>
         </select>

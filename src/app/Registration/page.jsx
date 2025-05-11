@@ -28,7 +28,7 @@ const Registration = () => {
       mobile,
     };
     try {
-      const reg = await fetch("http://localhost:4000/models/new_user", {
+      const reg = await fetch("http://localhost:4000/new_user", {
         method: "POST",
         headers: {
           "content-type": "application/json",

@@ -9,24 +9,30 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Header from "../Header/page";
 import { useEffect, useState } from "react";
 import { useGoogleLogin } from "@react-oauth/google";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const User = () => {
+  const router = useRouter();
+
   const signIn = useGoogleLogin({
     onSuccess: (codeRes) => getUserProfile(codeRes),
+    // onSuccess: (codeRes) => console.log(codeRes.data),
     onError: (err) => console.log(err),
+    flow: "implicit",
+  });
+
+  useEffect(() => {
+    signIn();
   });
 
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // Safe to use window, localStorage, etc.
-    }
-  }, []);
 
   const getUserProfile = (tokenInfo) => {
     axios
       .get(
-        `https://www.googleapis.com/oauth2/v1/userinfo?access_tokens=${tokenInfo?.access_token}`,
+        // `https://www.googleapis.com/oauth2/v3/userinfo`
+        `https://www.googleapis.com/oauth2/v3/userinfo`,
         {
           headers: {
             Authorization: `Bearer ${tokenInfo?.access_token}`,
@@ -35,10 +41,27 @@ const User = () => {
         }
       )
       .then((res) => {
+        const userData = res;
+        const uniqueId = res.data.sub;
         // localStorage.setItem("user", JSON.stringify(res.data));
-        console.log(res.data);
+        console.log(res.data.picture);
+        console.log(res);
         setOpen(false);
         // generateTrip();
+
+        router.push(`/User/${uniqueId}`);
+
+        axios
+          .post("http://localhost:4000/models/new_user", {
+            GoogleId: userData.data.sub,
+            name: userData.data.name,
+            email: userData.data.email,
+            password: userData.data.password,
+            picture: userData.data.picture,
+          })
+          .then((response) => {
+            console.log("user saved", response.data);
+          });
       });
   };
 
@@ -49,7 +72,6 @@ const User = () => {
   const handleClose = () => {
     setOpen(false);
   };
-  console.log("Google Client ID:", process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID);
 
   return (
     <div>
