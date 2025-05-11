@@ -66,38 +66,6 @@ GET	    /credits	Get all credit entries
 POST	  /credits	Create a new credit entry
 
 
-📁 Project Structure
-Frontend (CREDIT-APP)
-arduino
-Copy
-Edit
-CREDIT-APP/
-├── public/
-├── src/
-│   └── app/
-│       ├── login/
-│       ├── register/
-│       └── dashboard/
-├── components/
-├── tailwind.config.mjs
-├── next.config.mjs
-└── ...
-
-Backend (CREDIT-APP-backend)
-bash
-Copy
-Edit
-CREDIT-APP-backend/
-├── models/
-│   └── Credit.js
-├── routes/
-│   └── credits.js
-├── db.js
-├── app.js
-├── .env
-└── ...
-
-
 👨‍💻 Author
 Yuva Raj Venkata
 📧 Email: ryuva125@gmail.com
